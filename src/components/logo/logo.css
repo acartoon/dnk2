@@ -1,0 +1,21 @@
+.logo {
+  display: block;
+  -ms-flex-preferred-size: 80px;
+      flex-basis: 80px;
+  max-height: 24px;
+  max-width: 50px;
+  width: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    max-height: 70px;
+    max-width: 110px;
+    margin: auto;
+    width: 110px;
+    padding: 0;
+  }
+}
+/*# sourceMappingURL=logo.css.map */

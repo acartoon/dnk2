@@ -1,0 +1,37 @@
+extends ../../template/template.pug
+
+block variables
+  - var titlePage = 'Какая-то вещь'
+  - var pageNameClass = 'product'
+
+block content
+  section.product__product
+    .container
+      include ../../components/product/product.pug
+
+  section.product__catalog-catalog
+    .container
+      //- h3.subtitle Family look
+      .product__catalog-catalog-inner
+        +accordion-mob('Family look')
+          include ../../components/catalog.family/catalog-family.pug
+
+  section.product__catalog-catalog
+    .container
+      //- h3.subtitle Идеи для образа
+      .product__catalog-catalog-inner
+        +accordion-mob('Идеи для образа')
+          include ../../components/catalog.look/catalog-look.pug
+
+  section.product__catalog-catalog
+    .container
+      .product__catalog-catalog-inner
+        //- h3.subtitle Просмотренные товары
+        +accordion-mob('Просмотренные товары')
+          include ../../components/catalog.viewed/catalog-viewed.pug
+
+  section.product__user-help
+    .container
+      .product__catalog-catalog-inner
+        +accordion-mob('Помощь')
+          include ../../components/user.help/user-help.pug

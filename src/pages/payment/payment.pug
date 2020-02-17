@@ -1,0 +1,31 @@
+extends ../../template/template.pug
+
+block variables
+  - var titlePage = 'Оформление заказа'
+  - var pageNameClass = 'payment'
+
+block content
+  .container
+    h1 Оформление заказа
+    .row
+      .col-12.col-md-6
+        section.payment-page__user-data
+            //- include ../../components/info.block/info-block.pug
+
+        section.payment-page__user-data
+          h3 данные получателя
+          include ../../components/user.data/user-data.pug
+
+        section.payment-page__shipping
+          h3 служба доставки
+          include ../../components/shipping/shipping.pug
+      .col-12.col-md-6
+        section.payment-page__price-total
+          include ../../components/price.payment/price-payment.pug
+
+        .payment-page__bottom.row
+          section.payment-page__payment.col-md-6
+            include ../../components/payment/payment.pug
+
+          section.payment-page__pay-btn.col-md-6
+            a.button Оформить заказ

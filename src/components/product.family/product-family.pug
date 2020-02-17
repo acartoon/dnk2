@@ -1,0 +1,6 @@
+include ../../mixins/product-viewed.pug
+
+
+mixin productFamily(src)
+  - var productName = 'product-family';
+  +product-viewed(productName, src)

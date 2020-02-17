@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,mBAAmB,CAAC;EAClB,OAAO,EAAE,IAAI;EACb,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,GAAG,CAAC,KAAK,CCL6F,IAAI;EDMlH,aAAa,ECFO,IAAI;CDEa;;AAEvC,AAAA,iBAAiB,CAAC;EAChB,aAAa,ECLO,IAAI;CDKa",
+    "sources": [
+        "shipping.sass",
+        "../../template/variables.sass"
+    ],
+    "names": [],
+    "file": "shipping.css"
+}

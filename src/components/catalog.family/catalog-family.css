@@ -1,0 +1,15 @@
+.para {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+}
+
+.catalog-family {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=catalog-family.css.map */

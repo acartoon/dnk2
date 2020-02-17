@@ -1,0 +1,11 @@
+-
+  var menuTop = [
+    {title: 'Доставка', link: 'delivery'},
+    {title: 'Наши магазины', link: 'shops'},
+    {title: 'Контакты', link: 'contacts'}
+  ]
+
+ul.menu-top
+  each val in menuTop
+    li.menu-top__item
+      a(href=val.link).menu-top__link=val.title

@@ -1,0 +1,41 @@
+@import ../../template/variables
+
+.header
+  @media(min-width: 768px)
+    padding-top: 25px
+    padding-bottom: 20px
+
+.main-nav__menu-user
+  margin-left: auto
+
+.main-nav__top
+  padding-left: 65px
+  padding-right: 5px
+  background: map-get($colors, black)
+  @media(min-width: 768px)
+    background: transparent
+    padding: 0
+    padding-bottom: 20px
+
+.main-nav__menu-main
+  background: map-get($colors, black)
+
+.main-nav__menu-top
+  display: none
+  @media(min-width: 768px)
+    display: flex
+
+
+.main-nav__dropdown
+  padding-top: 40px
+  display: block
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 100%
+  width: 100%
+  background: map-get($colors, black)
+  @media(min-width: 768px)
+    padding-top: 0px
+    position: static
+    background: transparent

@@ -1,0 +1,46 @@
+@import ../../template/variables
+
+$size: 40px
+
+.gift
+  display: block
+
+.gift__input
+  margin-bottom: map-get($indent, s)
+
+  &--used
+    margin-bottom: 0
+    padding-right: $size
+    &:before
+    
+.gift__button
+  margin-bottom: map-get($indent, s)
+
+// .gift__input
+//   display: none
+
+//   &.active 
+//     display: block
+
+.gift__used-block
+  position: relative
+
+.gift__used-remove  
+  position: absolute
+  right: 0
+  top: 0
+  width: $size
+  height: 100%
+  &:before
+    transform: translate(-50%, -50%)
+    top: 50%
+    left: 50%
+    content: '\2BBE'
+    content: ''
+    position: absolute
+    width: 20px
+    height: 20px
+    background: url(/img/icons/close-ser.svg)
+    background-size: contain
+    background-repeat: no-repeat
+      

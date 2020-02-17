@@ -1,0 +1,7 @@
+include ../product.family/product-family.pug
+
+
+ul.catalog-family.row
+  - for (var x = 120; x < 126; x++)
+    li.catalog-viewed__item.col-6.col-md-2
+      +productFamily(`/img/products/${x}.jpg`)

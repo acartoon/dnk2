@@ -1,0 +1,12 @@
+-
+  var menuUser = [
+    {title: 'Личный кабинет', type: 'personal'},
+    {title: 'Поиск', type: 'search'},
+    {title: 'Корзина', type: 'basket'}
+  ]
+
+
+ul.menu-user
+  each val in menuUser
+    li.menu-user__item
+      a(href=val.type, class=`menu-user__link menu-user__link--${val.type}`)=val.title

@@ -1,0 +1,6 @@
+include ../../mixins/product-viewed.pug
+
+
+mixin productCatalog(src)
+  - var productName = 'product-catalog';
+  +product-viewed(productName, src)

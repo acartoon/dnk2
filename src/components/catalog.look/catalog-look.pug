@@ -1,0 +1,6 @@
+include ../product.look/product-look.pug
+
+ul.catalog-viewed.row
+  - for (var x = 100; x < 105; x++)
+    li.catalog-viewed__item.col-6.col-md-2
+      +productLook(`/img/products/${x}.jpg`)

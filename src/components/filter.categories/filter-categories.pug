@@ -1,0 +1,47 @@
+include ../filter/filter.pug
+
+-
+  var hits = [
+    {title: 'Дети', id: 'child1', value: 'child'},
+    {title: 'Подростки', id: 'teens1', value: 'teens'},
+    {title: 'Мужчины', id: 'man1', value: 'man'},
+    {title: 'Женщины', id: 'woman1', value: 'woman'}
+  ]
+
+-
+  var categiries = [
+    {title: 'Дети', id: 'child', value: 'child'},
+    {title: 'Подростки', id: 'teens', value: 'teens'},
+    {title: 'Мужчины', id: 'man', value: 'man'},
+    {title: 'Женщины', id: 'woman', value: 'woman'}
+  ]
+
+-
+  var type = [
+    {title: 'Верхняя одежда', id: 'top', value: 'top'},
+    {title: 'Комбезы', id: 'overall', value: 'overall'},
+    {title: 'Костюмы', id: 'suit', value: 'suit'},
+    {title: 'Кофты/Футбы', id: 'shirt', value: 'shirt'},
+    {title: 'Платья/юбки', id: 'dress', value: 'dress'},
+    {title: 'Свитшоты/толстовки', id: 'sweetshot', value: 'sweetshot'},
+    {title: 'Штаны', id: 'pants', value: 'pants'}
+  ]
+
+-
+  var filter = [
+    {title: 'Новая коллекция', array: categiries},
+    {title: 'Хиты продаж',  array: hits},
+    {title: 'Одежда', array: type}
+  ]
+
+
+ul.filter-categories
+  each val in filter
+    li.filter-categories__item
+      h3.filter-categories__title=val.title
+      .filter-categories__filter
+        .filter-categories__wrapper
+          +filter(val.array)
+          //- .d-md-none
+          //-   button.button.button--thin Применить
+

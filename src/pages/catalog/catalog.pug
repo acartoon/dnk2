@@ -1,0 +1,36 @@
+extends ../../template/template.pug
+
+block variables
+  - var titlePage = 'Платья/юбки';
+  - var pageNameClass = 'catalog';
+
+block content
+
+  .container
+    .row
+      .col-12.col-md-3
+        //- p.catalog__btn-filter.catalog__btn-filter--categories Категории
+        section(filter=`categories`).catalog__filter
+          include ../../components/filter.categories/filter-categories.pug
+          .catalog__filter-footer
+            button(type=`filter`).button Применить
+      .col-12.col-md-9
+        .catalog__content
+          h1.main-title.catalog__main-title Платья/юбки
+          .catalog__mobile-filter
+            button(filter-type=`categories`).catalog__btn-filter.catalog__btn-filter--categories
+              span Категории
+            button(filter-type=`filter`).catalog__btn-filter.catalog__btn-filter--filter
+              span Фильтр
+          //- p.catalog__btn.catalog__btn-filter--filter Фильтр
+          .catalog__filter(filter=`filter`)
+            include ../../components/filter.catalog/filter-catalog.pug
+            .catalog__filter-footer
+              button(type=`filter`).button Применить
+          .catalog__catalog
+            include ../../components/catalog.list/catalog-list.pug
+          .catalog__pagination
+            button.button Показать больше
+      .col-12
+        section.catalog__user-help
+          include ../../components/user.help/user-help.pug

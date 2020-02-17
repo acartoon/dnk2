@@ -1,0 +1,7 @@
+- var catalog = ['дети', 'подростки', 'женщины', 'мужчины'];
+
+ul.row.catalog-menu
+  each val in catalog
+    li.catalog-menu__item.col-12.col-md-6
+      img(src="http://placehold.it/565x350").catalog-menu__link
+      p.catalog-menu__title=val

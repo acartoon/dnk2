@@ -1,0 +1,6 @@
+include ../product.basket/product-basket.pug
+
+ul.basket-list
+  - for (var x = 100; x < 104; x++)
+    li.basket-list__item
+      +productBasket(`/img/products/${x}.jpg`, 'Юбка NoSignal желтая SALE', '2', '1200')

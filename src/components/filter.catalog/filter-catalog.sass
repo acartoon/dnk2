@@ -1,0 +1,86 @@
+@import ../../template/variables
+
+$offset: 10px
+
+.filter-catalog
+  list-style: none
+  margin: 0
+  padding: 0
+  margin-left: -$offset
+  margin-right: -$offset
+  transition: padding 0.3s ease-out
+  margin-bottom: map-get($indent, m)
+
+  @media(min-width: 768px)
+    display: flex
+    position: relative
+    margin-bottom: 0
+
+  &--row
+    display: block
+
+.filter-catalog__item
+  padding-left: $offset
+  padding-right: $offset
+  margin-bottom: map-get($indent, sm)
+  // padding-bottom: 15px
+  @media(min-width: 768px)
+    margin-bottom: 0
+    position: relative
+
+.filter-catalog__title
+  $padding: 30px
+  position: relative
+  margin: 0
+  font-weight: 300
+  padding-right: $padding
+  cursor: pointer
+  // margin-bottom: map-get($indent, s)
+
+  .active 
+    &::before
+      content: ''
+
+  &::before
+    content: '\002B'
+    $size: 20px
+    position: absolute
+    display: block
+    width: $size
+    height: $size
+    right: 0
+    top: 0
+    // background: url(/img/icons/plus.svg)
+    // background-size: contain
+    // background-repeat: no-repeat
+
+.filter-catalog__filter
+  max-height: 0
+  overflow: hidden
+  transition: max-height 0.3s ease-out
+  // padding-top: 10px
+  box-sizing: border-box
+
+  @media(min-width: 768px)
+    position: absolute
+    z-index: 100
+    background: map-get($colors, white)
+    width: 200px
+    left: 10px
+    padding-left: 15px
+    padding-right: 15px
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, .4)
+    margin-top: map-get($indent, xs) * 2
+
+    // padding-top: map-get($indent, s)
+  
+  .open &
+    // display: block
+
+.filter-catalog__wrapper
+  padding-top: map-get($indent, xs) * 2
+  padding-left: 10px
+  @media(min-width: 768px)
+    padding-left: 0
+    padding-bottom: map-get($indent, s)
+    padding-top: map-get($indent, s)

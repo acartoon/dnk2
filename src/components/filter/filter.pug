@@ -1,0 +1,7 @@
+mixin filter(array, row = false)
+  - var className = (row == false ? 'filter--row' : '');
+  ul(class=className).filter
+    each val in array
+      li.filter__item
+        input(id=val.id, value=val.value, type='checkbox').filter__input
+        label(for=val.id).filter__label=val.title

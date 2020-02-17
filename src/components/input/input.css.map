@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,SAAS;EAClB,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,GAAG,CAAC,KAAK,CCN6F,IAAI;EDOlH,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,IAAI;EACX,WAAW,EAAE,OAAO;CAAG",
+    "sources": [
+        "input.sass",
+        "../../template/variables.sass"
+    ],
+    "names": [],
+    "file": "input.css"
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <style>
+    .range-slider {
+      position: relative;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      max-width: 350px;
+    }
+
+    .toggle__bar {
+      position: relative;
+      width: 100%;
+      background: #ddd;
+      height: 2px;
+    }
+
+    .toggle__bar-progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #272727;
+      height: 2px;
+      z-index: 20;
+    }
+
+    .toggle__handle {
+      position: absolute;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #272727;
+      -webkit-box-shadow: inset 0px 0px 0px 5px #fff;
+              box-shadow: inset 0px 0px 0px 5px #fff;
+      border: 1px solid #ddd;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .toggle__handle--min {
+      left: 0;
+    }
+
+    .toggle__handle--max {
+
+    }
+
+    .toggle__label {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-right: -10px;
+      margin-left: -10px;
+      margin-bottom: 15px;
+    }
+
+    .toggle__input {
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+      padding: 5px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      color: #ddd;
+    }
+
+    .toggle__input-block {
+      width: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="range-slider">
+    <div class="range-slider__values">
+      <div class="range-slider__value">
+        <input class="input" value="2000">
+      </div>
+      <div class="range-slider__value">
+        <input class="input" value="3000">
+      </div>
+    </div>
+    <div class="range-slider__bar">
+      <div class="range-slider__bar range-slider__bar--progress"></div>
+      <div class="range-slider__handle" handle-type='min'></div>
+      <div class="range-slider__handle" handle-type='max'></div>
+    </div>
+  </div>
+
+  <!-- <div class="toggle">
+    <div class="toggle__label">
+      <div class="toggle__input-block">
+        <input class="toggle__input toggle__input--min" value="2000">
+      </div>
+      <div class="toggle__input-block">
+        <input class="toggle__input toggle__input--max" value="3000">
+      </div>
+    </div>
+    <div class="toggle__bar">
+      <div class="toggle__bar-progress"></div>
+      <div class="toggle__handle toggle__handle--min"></div>
+      <div class="toggle__handle toggle__handle--max"></div>
+    </div>
+  </div> -->
+  <script src="index.js"></script>
+</body>
+
+</html>

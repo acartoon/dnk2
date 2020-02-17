@@ -1,0 +1,24 @@
+.para {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+}
+
+.product__catalog-catalog-inner {
+  border-top: 1px solid #9a9a9a;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+@media (min-width: 768px) {
+  .product__catalog-catalog-inner {
+    border: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .product__catalog-catalog {
+    border-top: 1px solid #9a9a9a;
+    border-bottom: 1px solid #9a9a9a;
+  }
+}
+/*# sourceMappingURL=product.css.map */

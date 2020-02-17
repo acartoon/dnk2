@@ -1,0 +1,12 @@
+.basket-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.basket-list__item {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 35px;
+}
+/*# sourceMappingURL=basket-list.css.map */

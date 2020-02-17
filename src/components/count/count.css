@@ -1,0 +1,45 @@
+.count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.count__count {
+  width: 35px;
+  text-align: center;
+}
+
+.count__btn {
+  width: 26px;
+}
+
+.count__btn:active::before {
+  -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.16);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.count__btn::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  font-size: 15px;
+  line-height: 26px;
+  vertical-align: center;
+  text-align: center;
+  min-width: 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.count__btn--minus::before {
+  content: '\2212';
+}
+
+.count__btn--plus::before {
+  content: '\002B';
+}
+/*# sourceMappingURL=count.css.map */

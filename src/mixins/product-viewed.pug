@@ -1,0 +1,8 @@
+mixin product-viewed(className, src)
+  div(class=className)
+    div(class=`${className}__img-block`)
+      img(class=`${className}__img-first` src=src, alt="")
+      img(class=`${className}__img-second` src="/img/123.jpg", alt="")
+    div(class=`${className}__bottom`)
+      p(class=`${className}__name`) Кимоно день/ночь
+      p(class=`${className}__price`) 560 ₽

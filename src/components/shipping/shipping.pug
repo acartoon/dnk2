@@ -1,0 +1,11 @@
+include ../delivery/delivery.pug
+
+.shipping
+  .shipping__selected
+    +delivery('Почта России', '2500', '3')
+  .shipping__select
+  .shipping__bottom.row
+    .shipping__change.col-md-6
+      button.button Изменить доставку
+    .shipping__change.col-md-6
+      button.button Выбрат пунт самовывоза

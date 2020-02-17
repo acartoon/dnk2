@@ -1,0 +1,56 @@
+include ../filter/filter.pug
+
+-
+  var collection = [
+    {title: '2020', id: '2020', value: '2020'},
+    {title: 'днк хит', id: 'hit', value: 'hit'},
+    {title: 'Ренессанс', id: 'renaissance', value: 'renaissance'},
+    {title: 'Смешарики', id: 'smeshariki', value: 'smeshariki'}
+  ]
+
+-
+  var size = [
+    {title: 'woman xs', id: 'xs', value: 'xs'},
+    {title: 'one size woman', id: 'wos', value: 'wos'},
+    {title: 'x one size woman', id: 'wosx', value: 'wosx'}
+  ]
+
+-
+  var price = [
+    {title: '2020', id: '2020', value: '2020'},
+    {title: 'hit', id: 'hit', value: 'Днк хит'},
+    {title: 'renaissance', id: 'renaissance', value: 'Ренессанс'},
+    {title: 'smeshariki', id: 'smeshariki', value: 'Смешарики'}
+  ]
+
+-
+  var color = [
+    {title: 'Красный', id: 'red', value: 'red'},
+    {title: 'Зеленый', id: 'green', value: 'green'},
+    {title: 'Синий', id: 'blue', value: 'blue'},
+    {title: 'Желтый', id: 'yellow', value: 'yellow'}
+  ]
+
+-
+  var filter = [
+    {title: 'Коллекция', array: collection},
+    {title: 'Размер',  array: size},
+    {title: 'Стоимость', array: price},
+    {title: 'Цвет', array: color},
+  ]
+
+ul.filter-catalog
+  each val in filter
+    li.filter-catalog__item
+      h3.filter-catalog__title=val.title
+      .filter-catalog__filter
+        .filter-catalog__wrapper
+          if(val.array === price)
+            include ../toggle/toggle.pug
+            .d-none.d-md-block
+              button.button.button--thin Применить
+          else
+            +filter(val.array)
+            .d-none.d-md-block
+              button.button.button--thin Применить
+

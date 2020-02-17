@@ -1,0 +1,67 @@
+@import ../../template/variables
+
+$toggleSize: 18px
+
+.range-slider
+  position: relative
+  padding-bottom: map-get($indent, xs)
+  margin-bottom:  map-get($indent, s)
+
+.range-slider__controls
+  position: relative
+
+.range-slider__scale
+  position: relative
+  width: 100%
+  background: map-get($colors, lightgrey)
+  height: 2px
+
+.range-slider__progress
+  position: absolute
+  left: 0
+  top: 0
+  // width: 50%
+  background: map-get($colors, black)
+  height: 2px
+  z-index: 20
+
+.range-slider__handle
+  position: absolute
+  top: 50%
+  width: $toggleSize
+  height: $toggleSize
+  border-radius: 50%
+  background: #272727
+  box-shadow: inset 0px 0px 0px 5px map-get($colors, white)
+  border: 1px solid map-get($colors, lightgrey)
+  transform: translateY(-50%)
+  z-index: 100
+  cursor: pointer
+
+  // &--min
+  //   left: 0
+
+  // &--max
+  //   left: 50%
+
+.range-slider__price-controls
+  display: flex
+  margin-right: -10px
+  margin-left: -10px
+  margin-bottom: map-get($indent, s)
+
+// .toggle__input
+//   max-width: 100%
+//   width: 100%
+//   text-align: center
+//   border-radius: 3px
+//   border: 1px solid map-get($colors, lightgrey)
+//   padding: 5px
+//   box-sizing: border-box
+//   color: map-get($colors, lightgrey)
+
+.range-slider__price
+  width: 50%
+  padding-left: 10px
+  padding-right: 10px
+  // background: red

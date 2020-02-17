@@ -1,0 +1,14 @@
+-
+  var properties = [
+    {parameter: 'Длина по центру спинки с бейкой горловины', property: '-/+1.541,5 см'},
+    {parameter: 'Длина рукава с бейкой горловины', property: '-/+1.541,5 см'},
+    {parameter: 'Ширина под проймой', property: '-/+1.541,5 см'},
+    {parameter: 'Длина по боковому шву', property: '-/+1.541,5 см'},
+    {parameter: 'Длина по шаговому шву', property: '-/+1.541,5 см'}
+  ]
+
+ul.property-product
+  each val in properties
+    li.property-product__item
+      span.property-product__parameter=val.parameter + ':'
+      span.property-product__property=val.property

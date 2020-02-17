@@ -1,0 +1,7 @@
+include ../product.catalog/product-catalog.pug
+
+
+ul.catalog-list.row
+  - for (var x = 120; x < 126; x++)
+      li.catalog-list__item.col-6.col-md-3
+        +productCatalog(`/img/products/${x}.jpg`)

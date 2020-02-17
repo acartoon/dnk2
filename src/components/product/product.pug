@@ -1,0 +1,42 @@
+include ../accordion-mob/accordion-mob.pug
+- var description = 'Коллаборация DNK&Смешарики - стильная, яркая коллекция, где у каждой вещи так же, как у каждого героя одного из самых популярных мультсериалов - свой яркий характер. С DNK легко выглядеть круто. И новая коллекция этому доказательство. Ведь не только дети любят мультики, но и нам, взрослым, так необходимо сохранить эту частичку детства в своей душе.'
+
+.product.row
+  .col-12.col-md-6
+    .product__img-block
+      img(src="/img/dress.jpg").product__img-link
+
+  .product__info.col-12.col-md-6
+    .product__header
+      h3.product__name Костюм DNK&СМЕШАРИКИ черный
+      p.product__price 2 500 ₽
+
+    p.product__table-size
+      span Таблица размеров
+
+    .product__offers
+      include ../offers.product/offers-product.pug
+
+    .product__quantity
+      p.product__quantity-title количество
+      include ../quantity/quantity.pug
+
+    .product__button-buy
+      button.button В корзину
+
+  .col-12
+    ul.product__property.row
+      li.col-12.col-md-6
+        .product__property-item
+          +accordion-mob('Общие параметры')
+            include ../product.property/product-property.pug
+
+      li.col-12.col-md-6
+        .product__property-item
+          +accordion-mob('Параметры размера')
+            include ../product.property/product-property.pug
+
+      li.col-12
+        .product__property-item.product__property-item--last
+          +accordion-mob('Описание')
+            p.product__description-text=description

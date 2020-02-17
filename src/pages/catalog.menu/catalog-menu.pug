@@ -1,0 +1,17 @@
+extends ../../template/template.pug
+
+block variables
+  - var titlePage = 'Платья/юбки';
+  - var pageNameClass = 'catalog';
+
+block content
+
+  .container
+    h1 NEW
+  .container
+    section.catalog__content
+      .catalog__catalog-menu
+        include ../../components/catalog.menu/catalog-menu.pug
+  .container
+    section.catalog__user-help
+      include ../../components/user.help/user-help.pug

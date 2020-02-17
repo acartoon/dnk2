@@ -1,0 +1,1 @@
+import './price-payment.sass'

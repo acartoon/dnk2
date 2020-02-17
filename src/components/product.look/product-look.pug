@@ -1,0 +1,5 @@
+include ../../mixins/product-viewed.pug
+
+mixin productLook(src)
+  - var productViewed = 'product-look'
+  +product-viewed(productViewed, src)

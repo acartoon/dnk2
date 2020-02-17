@@ -1,0 +1,65 @@
+@import ../../mixins/mixins
+
+$sizebase: 10px
+$sizeDesctop: 20px
+$menuUser: (personal, search, basket)
+
+@mixin users($classList)
+  @each $item in $menuUser
+    .#{$classList}--#{$item}:before
+      background-image: url(/img/icons/#{$item}.svg)
+      @media(min-width: 768px)
+        background: url(/img/icons/#{$item}--black.svg)
+
+
+@include users(menu-user__link)
+
+.menu-user
+  @include menu()
+  justify-content: flex-end
+  @media(min-width: 768px)
+    margin-left: -$sizeDesctop
+    margin-right: -$sizeDesctop
+
+
+.menu-user__link
+  $size: 25px
+  position: relative
+  @include menuLink()
+  display: block
+  color: map-get($colors, white)
+  padding-left: $size + map-get($indent, s)
+  padding-right: map-get($indent, s)
+  text-decoration: none
+  font-size: 0
+  padding-top: map-get($indent, s)
+  padding-bottom: map-get($indent, s)
+  // text-transform: uppercase
+
+  &::before
+    content: ''
+    position: absolute
+    display: block
+    width: $size
+    height: $size
+    background-repeat: no-repeat
+    background-size: contain
+    transform: translateX(-50%)
+    left: 50%
+
+
+  @media(min-width: 768px)
+    $size: 20px
+    padding-top: 7px
+    padding-bottom: 7px
+    padding-right: $sizeDesctop
+    padding-left: 30px
+    font-size: 14px
+    letter-spacing: .8px
+    color: map-get($colors, base)
+    &::before
+      transform: none
+      left: 0
+      width: $size
+      height: $size
+      top: 5px

@@ -1,0 +1,49 @@
+@import ../../template/variables
+@import ../../mixins/mixins
+
+.accordion-mob
+  position: relative
+  padding-top: map-get($indent, sm)
+  padding-bottom: map-get($indent, sm)
+
+.accordion__title
+  @include subtitle()
+  // position: relative
+  // padding-right: 25px
+  // margin: 0
+  // text-transform: uppercase
+  // font-weight: 300
+
+  &:before
+    position: absolute
+    right: 10px
+    content: '\002B'
+    @media(min-width: 768px)
+      content: none
+
+  .accordion--open &:before
+    content: '\2212'
+
+    @media(min-width: 768px)
+      content: none
+
+.accordion__body
+  // display: none
+  max-height: 0
+  box-sizing: border-box
+  overflow: hidden
+  // padding-top: map-get($indent, s)
+  transition: max-height 0.3s ease-out
+
+  &:before
+    content: ''
+    display: block
+    height: map-get($indent, s)
+    width: 100%
+
+  @media(min-width: 768px)
+     max-height: none
+
+  .accordion--open &
+    // display: block
+    // max-height: none

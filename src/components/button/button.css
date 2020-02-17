@@ -1,0 +1,25 @@
+.button {
+  position: relative;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background: black;
+  background: #3b444b;
+  color: white;
+  padding: 15px 5px;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  letter-spacing: 0.5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.2rem;
+}
+
+.button--thin {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+/*# sourceMappingURL=button.css.map */

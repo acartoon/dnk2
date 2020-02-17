@@ -1,0 +1,37 @@
+@import ../../template/variables
+
+.count
+  display: flex
+
+.count__count
+  width: 35px
+  text-align: center
+
+.count__btn
+  $size: 26px
+  width: $size
+
+  &:active
+    &::before
+      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.16)
+      transform: scale(1.01)
+
+  &::before
+    box-sizing: border-box
+    display: block
+    font-size: 15px
+    line-height: $size
+    vertical-align: center
+    text-align: center
+    min-width: $size
+    width: $size
+    height: $size
+    border-radius: 50%
+    border: 1px solid map-get($colors, lightgrey)
+
+  &--minus
+    &::before
+      content: '\2212'
+  &--plus 
+    &::before
+      content: '\002B'

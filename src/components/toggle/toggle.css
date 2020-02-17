@@ -1,0 +1,57 @@
+.range-slider {
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.range-slider__controls {
+  position: relative;
+}
+
+.range-slider__scale {
+  position: relative;
+  width: 100%;
+  background: #ddd;
+  height: 2px;
+}
+
+.range-slider__progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #272727;
+  height: 2px;
+  z-index: 20;
+}
+
+.range-slider__handle {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #272727;
+  -webkit-box-shadow: inset 0px 0px 0px 5px #fff;
+          box-shadow: inset 0px 0px 0px 5px #fff;
+  border: 1px solid #ddd;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 100;
+  cursor: pointer;
+}
+
+.range-slider__price-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-bottom: 15px;
+}
+
+.range-slider__price {
+  width: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/*# sourceMappingURL=toggle.css.map */

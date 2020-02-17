@@ -1,0 +1,31 @@
+.para {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+}
+
+.product-viewed {
+  display: block;
+}
+
+.product-viewed__img-block {
+  line-height: 0;
+}
+
+.product-viewed__img-second {
+  display: none;
+}
+
+.product-viewed__name {
+  margin: 0;
+}
+
+.product-viewed__price {
+  margin: 0;
+  font-weight: 400;
+}
+
+.product-viewed__bottom {
+  text-align: center;
+}
+/*# sourceMappingURL=product-viewed.css.map */

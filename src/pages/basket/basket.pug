@@ -1,0 +1,37 @@
+extends ../../template/template.pug
+
+block variables
+  - var titlePage = 'Корзина'
+  - var pageNameClass = 'product'
+
+block content
+  .container
+    h1 Корзина
+  section.basket-page__info-block
+    .container
+      include ../../components/info.block/info-block.pug
+
+  section.basket-page__basket-list 
+    .container
+      include ../../components/basket.list/basket-list.pug
+
+  section.basket-page__bottom
+    .container
+      .row
+        .col-12.col-md-6
+          .basket-page__gift
+            include ../../components/gift/gift.pug
+
+        .col-12.col-md-6
+          .basket-page__price-basket
+            include ../../components/price.basket/price-basket.pug
+
+
+  //- section.basket-page__user-data
+  //-   .container
+  //-     include ../components/info.block/info-block.pug
+
+
+  section.basket-page__paymetn-btn
+    .container
+      a.basket-page__button.button Далее

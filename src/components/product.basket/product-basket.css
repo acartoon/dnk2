@@ -1,0 +1,56 @@
+.product-basket__name {
+  margin: 0;
+  letter-spacing: .5px;
+  font-weight: 400;
+}
+
+.product-basket__product {
+  margin-bottom: 5px;
+}
+
+.product-basket__total-price {
+  letter-spacing: .5px;
+  font-weight: 400;
+}
+
+.product-basket__img {
+  line-height: 0;
+}
+
+.product-basket__price {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .product-basket__price {
+    display: block;
+  }
+}
+
+.product-basket__remove {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  right: 10px;
+}
+
+.product-basket__remove::before {
+  position: absolute;
+  top: 4px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  content: '';
+  background: url(/img/icons/delete.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  right: 10px;
+}
+
+@media (min-width: 768px) {
+  .product-basket__remove {
+    position: static;
+  }
+}
+/*# sourceMappingURL=product-basket.css.map */

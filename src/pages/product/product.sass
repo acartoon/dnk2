@@ -1,0 +1,28 @@
+@import '../../template/variables.sass';
+@import '../../mixins/mixins.sass';
+
+// @mixin border($class)
+//     @include media(768px)
+//     .product__#{$class}
+      // padding-bottom: map-get($indent, sm)
+      // border-bottom: 1px solid map-get($colors, grey)
+      // padding-bottom: map-get($indent, md)
+      // padding-top: map-get($indent, md)
+    
+
+// $sections: ('product', 'catalog-look', 'catalog-recommended')
+
+// @each $val in $sections
+//   @include border($val)
+
+.product__catalog-catalog-inner
+  border-top: 1px solid map-get($colors, grey)
+  border-bottom: 1px solid map-get($colors, grey)
+  
+  @include media(768px)
+    border: none
+
+.product__catalog-catalog
+  @include media(768px)
+    border-top: 1px solid map-get($colors, grey)
+    border-bottom: 1px solid map-get($colors, grey)

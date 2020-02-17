@@ -1,0 +1,71 @@
+@import ../template/variables
+
+@mixin make-product($class)
+  .#{$class}
+    display: block
+  .#{$class}__img-block
+    line-height: 0
+  .#{$class}__img-second
+    display: none
+  .#{$class}__name
+    margin: 0
+  .#{$class}__price
+    margin: 0
+    font-weight: 400
+  .#{$class}__bottom
+    text-align: center
+
+@mixin make-catalog($class)
+  .#{$class}
+    margin: 0
+    padding: 0
+    list-style: none
+    justify-content: center
+
+
+@mixin media($width)
+  @media(min-width: $width)
+    @content
+
+
+
+@mixin mainTitle()
+  font-size: 31px
+  line-height: 42px
+  margin: 0
+  font-weight: 400
+
+@mixin title()
+  font-size: 24px
+  line-height: 42px
+  margin: 0
+  font-weight: 400
+
+@mixin subtitle()
+  font-size: 18px
+  line-height: 21px
+  margin: 0
+  font-weight: 300
+
+@mixin subheading()
+  font-size: 14px
+  line-height: 21px
+  margin: 0
+  font-weight: 400
+
+.para
+  font-size: 14px
+  line-height: 21px
+  margin: 0
+
+
+@mixin menu()
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  
+  @content
+
+@mixin menuLink()
+  color: map-get($colors, base)

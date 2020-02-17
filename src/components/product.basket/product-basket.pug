@@ -1,0 +1,17 @@
+mixin productBasket(img, name, count, price)
+  .product-basket.row
+    .col-3.col-md-1.product-basket__img
+      img(src=img)
+    .col-9.col-md-11
+      .row
+        .col-12.col-md-6.product-basket__product
+          p.product-basket__name=name
+          .product-basket__size one size woman
+          //- p.product-basket__articul
+        //- .col-md-1.product-basket__size one size woman
+        .col-4.col-md-2.product-basket__price=price
+        .col-6.col-md-2.product-basket__count
+          include ../count/count.pug
+        .col-4.col-md-1.product-basket__total-price=price*count
+        .col-md-1.product-basket__remove
+

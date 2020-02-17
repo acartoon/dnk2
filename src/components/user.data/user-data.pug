@@ -1,0 +1,16 @@
+
+-
+  var userData = [
+    {placeholder: 'Имя и фамилия', type: "text"},
+    {placeholder: 'Электронная почта', type: "text"},
+    {placeholder:'Номер телефона', type: "tel"},
+    {placeholder:'Индекс', type: "number"},
+    {placeholder:'Город', type: "text"},
+    {placeholder:'Улица/номер дома', type:  "text"},
+    {placeholder:'Комментарии', type:  "text"}
+  ]
+
+ul.user-data.row
+  each val in userData
+    li.user-data__item.col-12.col-md-6
+      input(type=val.type, placeholder=val.placeholder).input

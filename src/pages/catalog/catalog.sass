@@ -1,0 +1,59 @@
+@import ../../template/variables
+
+.catalog__main-title
+  margin-bottom: map-get($indent, s)
+  text-align: center
+
+.catalog__mobile-filter
+  @media(min-width: 768px)
+    display: none
+
+.catalog__mobile-filter
+  // text-align: center
+  margin-bottom: map-get($indent, s) 
+  
+.catalog__btn-filter
+  margin: 0
+  margin-bottom: 5px
+  width: 100%
+  border: none
+  background: transparent
+  color: map-get($colors, base)
+  font-size: inherit
+  font-weight: 300
+  font-size: 14px
+  letter-spacing: .5px
+  padding: map-get($indent, xs)
+  span
+    border-bottom: 1px dotted map-get($colors, base)
+
+
+.catalog__filter
+  position: fixed
+  width: 100%
+  left: 100%
+  top: 0
+  bottom: 0
+  background: #fff
+  z-index: 100
+  padding-top: 50px
+  padding-left: 15px
+  box-sizing: border-box
+  padding-right: 15px
+  overflow: auto
+  transition: left .3s ease-in
+
+  &.open
+    left: 0
+
+  @media(min-width: 768px)
+    position: static
+    display: block
+    margin-bottom: map-get($indent, sm)
+    padding: 0
+    overflow: inherit
+
+
+.catalog__filter-footer
+  @media(min-width: 768px)
+    display: none

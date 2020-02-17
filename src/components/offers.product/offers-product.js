@@ -1,0 +1,1 @@
+import './offers-product.sass';

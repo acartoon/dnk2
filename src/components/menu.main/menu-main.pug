@@ -1,0 +1,18 @@
+-
+  var menuMain = [
+    {title: 'NEW', link: 'new', new: true},
+    {title: 'Дети', link: 'children'},
+    {title: 'Подростки', link: 'teens'},
+    {title: 'Женщины', link: 'woman'},
+    {title: 'Мужчины', link: 'man'},
+    {title: 'Аксы', link: 'accessories'},
+    {title: 'Коллекции', link: 'collection'},
+    {title: 'Sale', link: 'sale'}
+  ]
+
+
+ul.menu-main
+  each val in menuMain
+    li.menu-main__item
+      - var className = val.new == true ? 'menu-main__link--new' : ''
+      a(href=val.link, class=className).menu-main__link=val.title

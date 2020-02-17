@@ -1,0 +1,18 @@
+@import ../../mixins/mixins
+@import ../../template/variables
+
+$size: 10px
+
+.menu-top
+  @include menu()
+  margin-left: -$size
+  padding-right: -$size
+
+.menu-top__link
+  @include menuLink()
+  display: block
+  color: map-get($colors, base)
+  padding: 7px $size
+  text-decoration: none
+  font-size: 14px
+  letter-spacing: .8px
