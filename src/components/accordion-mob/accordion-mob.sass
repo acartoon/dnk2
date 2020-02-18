@@ -6,6 +6,10 @@
   padding-top: map-get($indent, sm)
   padding-bottom: map-get($indent, sm)
 
+  @media(min-width: 768px)
+    padding-top: map-get($indent, md)
+    padding-bottom: map-get($indent, md)
+
 .accordion__title
   @include subtitle()
   // position: relative
@@ -13,6 +17,11 @@
   // margin: 0
   // text-transform: uppercase
   // font-weight: 300
+
+  @media(min-width: 768px)
+    text-align: center
+    margin-bottom: 10px
+    text-transform: uppercase
 
   &:before
     position: absolute
@@ -47,3 +56,4 @@
   .accordion--open &
     // display: block
     // max-height: none
+

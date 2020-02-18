@@ -9,12 +9,13 @@ const getCounter = (counterElem) => {
   let value = Number(count.innerHTML);
 
     minus.addEventListener(`click`, () => {
-      let result = value === 1 ? value: value--;
+      let result = value === 1 ? value: --value;
       count.innerHTML = result;
     })
 
     plus.addEventListener(`click`, () => {
-      count.innerHTML = value++;
+      console.log(value)
+      count.innerHTML = ++value;
     })
 
 }

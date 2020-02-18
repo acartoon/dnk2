@@ -2,8 +2,16 @@
 @import '../../mixins/mixins';
 
 .product__img-block
-  height: 300px
+  // height: 300px
   text-align: center
+  display: flex
+
+  @media(min-width: 768px)
+    height: auto
+
+  .slick-main & 
+    // max-height: 120px
+    // height: 120px
   
 .product__img-link
   max-width: 100%
@@ -11,7 +19,19 @@
 
 .product__name
   @include subtitle()
-  margin-bottom: map-get($indent, xs)*2
+  margin-bottom: 0
+
+
+  @media (min-width: 768px)
+    font-size: 25px
+    line-height: 1.5em
+    font-weight: 400
+
+.product__collection
+  margin: 0
+  margin-bottom: 20px
+  text-transform: uppercase
+  color: map-get($colors, grey)
 
 .product__header
   text-align: center
@@ -22,6 +42,10 @@
 
 .product__price
   @include subtitle()
+
+  @media(min-width: 768px)
+    margin-bottom: map-get($indent, s)
+    font-weight: 400
 
 .product__info
   margin-bottom: map-get($indent, sm)*2
@@ -67,8 +91,8 @@
     height: 1px
     box-sizing: border-box
     background: map-get($colors, grey)
-    // @media(min-width: 768px)
-    //   content: none
+    @media(min-width: 768px)
+      content: none
 
       
   &--last
@@ -101,3 +125,25 @@
   margin: 0
   margin-right: 15px
   text-transform: uppercase
+
+.product__emphasis
+  text-transform: lowercase
+  display: block
+  font-style: normal
+  // font-weight: 400
+
+  span 
+    text-decoration: none
+    font-weight: 300
+    border-bottom: 1px dotted
+    margin-left: 5px
+
+.product__data
+  margin-bottom: map-get($indent, s)
+
+.slick-list
+  padding: 0 !important
+  // height: 100% !important
+
+.slick-main
+  height: 100%
