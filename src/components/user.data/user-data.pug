@@ -13,4 +13,5 @@
 ul.user-data.row
   each val in userData
     li.user-data__item.col-12.col-md-6
+      label=val.placeholder
       input(type=val.type, placeholder=val.placeholder).input

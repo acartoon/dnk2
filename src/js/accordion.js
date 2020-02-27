@@ -1,5 +1,5 @@
 export class Accordion {
-  constructor(accordion, ) {
+  constructor(accordion) {
     this._accordion = accordion;
     this._activeAccordion = null;
   }
@@ -16,13 +16,14 @@ export class Accordion {
     accordionBody.style.maxHeight = null;
   }
 
-  _openAccordion(accordion) {
+  openAccordion(accordion) {
+    console.log(this._activeAccordion)
     const accordionBody = accordion.lastElementChild;
     if(!accordionBody.style.maxHeight) {
       if(this._activeAccordion) {
         this._closeAccordion(this._activeAccordion)
       }
-      accordion.classList.add(`active`)
+      accordion.classList.add(`active`);
       accordionBody.style.maxHeight = accordionBody.scrollHeight + 'px';
       this._activeAccordion = accordion;
     } else {
@@ -33,9 +34,8 @@ export class Accordion {
 
   _initAccordion(accordion) {
     const toggle = accordion.firstElementChild;
- 
     toggle.addEventListener(`click`, () => {
-      this._openAccordion(accordion);
+      this.openAccordion(accordion);
     })
   }
 }

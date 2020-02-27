@@ -9,29 +9,33 @@ block content
     .container
       include ../../components/product/product.pug
 
-  section.product__catalog-catalog
+  section(id='family').product__recommend
     .container
-      //- h3.subtitle Family look
-      .product__catalog-catalog-inner
-        +accordion-mob('Family look')
-          include ../../components/catalog.family/catalog-family.pug
+      .product__recommend-inner.accordion
+        h3.product__subtitle.subtitle.accordion__title Family look
+        .accordion__body.product__catalog
+          .accordion__wrapper
+            include ../../components/catalog.family/catalog-family.pug
 
-  section.product__catalog-catalog
+  section.product__recommend
     .container
-      //- h3.subtitle Идеи для образа
-      .product__catalog-catalog-inner
-        +accordion-mob('Идеи для образа')
-          include ../../components/catalog.look/catalog-look.pug
+      .product__recommend-inner.accordion
+        h3.product__subtitle.subtitle.accordion__title Идеи для образа
+        .accordion__body.product__catalog
+          .accordion__wrapper
+            include ../../components/catalog.look/catalog-look.pug
 
-  section.product__catalog-catalog
+  section.product__recommend
     .container
-      .product__catalog-catalog-inner
-        //- h3.subtitle Просмотренные товары
-        +accordion-mob('Просмотренные товары')
-          include ../../components/catalog.viewed/catalog-viewed.pug
+      .product__recommend-inner.accordion
+        h3.product__subtitle.subtitle.accordion__title Просмотренные товары
+        .accordion__body.product__catalog
+          .accordion__wrapper
+            include ../../components/catalog.viewed/catalog-viewed.pug
 
   section.product__user-help
     .container
-      .product__catalog-catalog-inner
-        +accordion-mob('Помощь')
+      .product__recommend-inner
+        h3.product__subtitle.subtitle Остались вопросы?
+        .accordion__wrapper
           include ../../components/user.help/user-help.pug

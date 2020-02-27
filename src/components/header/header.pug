@@ -1,16 +1,17 @@
 header.header
-    nav.main-nav
-      .main-nav__top
-        .container
-          .row
-            include ../burger/burger.pug
-            .main-nav__menu-top.col-md-4
-              include ../menu.top/menu-top.pug
-            .main-nav__menu-logo.col-md-4
-              include ../logo/logo.pug
-            .main-nav__menu-user.col-md-4
-              include ../menu.user/menu-user.pug
-      .main-nav__menu-main
-        .container
-            .main-nav__dropdown
-              include ../menu.main/menu-main.pug
+  nav.main-nav
+    .main-nav__top
+      .container
+        .row
+          include ../burger/burger.pug
+          .main-nav__menu-top.col-md-4
+            include ../menu.top/menu-top.pug
+          .main-nav__menu-logo.col-md-4
+            include ../logo/logo.pug
+          .main-nav__menu-user.col-md-4
+            include ../menu.user/menu-user.pug
+    .main-nav__menu-main
+      .container
+          .main-nav__dropdown
+            include ../menu.main/menu-main.pug
+  include ../ribbon/template.pug

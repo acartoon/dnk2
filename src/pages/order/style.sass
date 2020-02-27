@@ -1,0 +1,100 @@
+@import ../../template/variables
+
+.order__block
+  &--r-border
+    border-right: 1px solid map-get($colors, lightgrey)
+    @media(min-width: 768px)
+      border-right: 0
+
+.order__subtitle
+  margin-bottom: map-get($indent, m) !important
+
+
+.order__status
+  font-size: 14px
+  letter-spacing: 0.5px
+
+.order__data
+  margin: 0
+  // margin-bottom: map-get($indent, xs)
+
+.order__item
+  margin-bottom: map-get($indent, sm)
+
+.order__tagline
+  margin-bottom: map-get($indent, xs) * 2 !important
+  font-weight: 700 !important
+
+.order__list
+  margin: 0
+  // padding: 0
+  padding-left: 24px
+  // list-style: none
+  @media(min-width: 768px)
+    column-count: 2
+    column-gap: 25px
+
+  .order__item
+    page-break-inside: avoid
+    break-inside: avoid-column
+
+.order__section
+  border-bottom: 1px solid map-get($colors, lightgrey)
+  padding-bottom: map-get($indent, l)
+  margin-bottom: map-get($indent, m)
+
+  &:last-child
+    border-bottom: none
+
+  &-help
+    padding-top: map-get($indent, l)
+    border-top: 1px solid map-get($colors, lightgrey)
+    text-align: center
+
+
+.order__dd
+  display: inline
+  position: relative
+  // width: 50%
+  margin: 0
+  &::after
+    white-space: pre
+    content: "\A"
+  & .text-link
+      margin-left: 15px
+      cursor: help
+
+.order__dt
+  display: none
+  // width: 50%
+  // position: absolute
+  padding-right: 10px
+  left: 0
+  margin: 0
+  font-weight: 700
+  .order__dl--full &
+    display: inline
+
+  @media(min-width: 768px)
+    display: inline
+
+
+.order__dl
+  margin: 0
+  padding: 0
+  &--last
+    border-top: 1px solid map-get($colors, lightgrey)
+    padding-top: map-get($indent, s)
+    margin-top: map-get($indent, s)
+
+.order__help-pop
+  display: none
+  @media(min-width: 768px)
+    position: absolute
+    left: 100%
+    width: 280px
+    margin-left: 15px
+    bottom: 100%
+
+.order__info
+  margin-top: map-get($indent, s)

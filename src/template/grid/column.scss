@@ -1,4 +1,29 @@
+@import '../variables.sass';
+
 $column: 12;
+
+
+
+$sizes: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left
+);
+
+
+@mixin make-margin-indent($value, $valueLabel, $side, $sideLabel) {
+  .m#{$sideLabel}-#{$valueLabel} {
+    margin-#{$side}: #{$value};
+  }
+}
+
+@mixin make-padding-indent($value, $valueLabel, $side, $sideLabel) {
+  .p#{$sideLabel}-#{$valueLabel} {
+    padding-#{$side}: #{$value};
+  }
+}
+
 
 @mixin make-container-column($breakpoint, $value) {
   @if $breakpoint {
@@ -31,8 +56,15 @@ $column: 12;
   }
 }
 
+@mixin make-order($breakpoint, $number) {
+  $value: if($number < 0, n#{$number * -1}, $number);
+  .order#{$breakpoint}-#{$value} {
+    order: #{$number};
+  }
+}
+
 @each $key, $value in $grid-breakpoints {
-  @for $i from 1 through $column {
+  @for $i from 0 through $column {
     $breakpoint: if($value != 0, -#{$key}, null);
     .col#{$breakpoint}-#{$i} {
       @include make-container-column($breakpoint, $value) {
@@ -48,7 +80,25 @@ $column: 12;
   @include make-container-column($breakpoint, $value) {
     @include make-display-none($breakpoint);
     @include make-display($breakpoint);
+    @for $i from -1 through 4 {
+      @include make-order($breakpoint, $i)
+    }
   }
-  // @include make-container-column($breakpoint, $value) {
-  // }
+}
+
+@each $key, $value in $sizes {
+  @each $keyIndent, $valueIndent in $indent {
+    @include make-margin-indent($valueIndent, $keyIndent, $value, $key);
+    @include make-padding-indent($valueIndent, $keyIndent, $value, $key);
+  }
+}
+
+
+
+
+
+@mixin make-display-none($breakpoint) {
+  .d#{$breakpoint}-none {
+    display: none;
+  }
 }

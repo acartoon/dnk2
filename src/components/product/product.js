@@ -5,38 +5,17 @@ import '../product.property/product-property';
 import '../accordion-mob/accordion-mob';
 import '../button/button';
 import $ from 'jquery';
-import slick from 'slick-slider';
-import 'slick-slider/slick/slick.scss';
-// import 'slick-slider/slick/slick-theme.scss';
-
-
-$('.slick-for').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  focusOnSelect: true,
-  appendArrows: 'click',
-  adaptiveHeight: true,
-
-  responsive: [{
-    breakpoint: 576,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    }
-
-  ]
-  // asNavFor: '.slick-main'
-});
+import slick from 'slick-carousel';
+import 'slick-carousel/slick/slick.scss';
+import { Accordion } from '../../js/accordion';
+import 'slick-carousel/slick/slick-theme.scss';
 
 $('.slick-main').slick({
+  centerPadding: '0',
   slidesToShow: 3,
   slidesToScroll: 1,
   asNavFor: '.slick-for',
+  
   slickPrev: false,
   dots: false,
   centerMode: true,
@@ -45,3 +24,31 @@ $('.slick-main').slick({
   verticalSwiping: false,
   arrows: false,
 });
+
+$('.slick-for').slick({
+  arrows: false,
+  dots: false,
+  centerMode: false,
+  centerPadding: '0',
+  slidesToShow: 1,
+  responsive: [{
+    breakpoint: 576,
+    settings: {
+      arrows: false,
+      dots: true,
+      dotsClass: 'dots',
+      centerMode: true,
+      centerPadding: '60px',
+      slidesToShow: 1,
+    }
+  }]
+});
+
+const property = document.querySelectorAll(`.product__property`);
+
+const accordion = new Accordion(property);
+accordion.init();
+
+
+const descriptionBlock = document.querySelector(`[property="description"]`)
+accordion.openAccordion(descriptionBlock);

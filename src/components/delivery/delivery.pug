@@ -1,5 +1,5 @@
 mixin delivery(name, price, date)
   .delivery
     p.delivery__name=name
-    p.delivery__price=price
-    p.delivery__date=date + ' дня'
+    p.delivery__price= `Стоимость доставки ${price}`
+    p.delivery__date= `Срок доставки ${date} дня`

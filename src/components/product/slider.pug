@@ -1,0 +1,12 @@
+- var array = [36, 39, 102, 105]
+.row.product__img-block
+  .col-md-3
+    .slick.slick-main.d-none.d-md-block
+      each val in array
+        .product__img
+          img(src=`/img/products/${val}.jpg`).product__img-link
+  .col-12.col-md-9
+    .slick.slick-for
+      each val in array
+        .product__img
+          img(src=`/img/products/${val}.jpg`).product__img-link

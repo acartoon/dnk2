@@ -1,20 +1,49 @@
+@import ../../template/variables
+    
 .button
+  position: relative
+  width: 100%
+  border: none
+  border-radius: 3px
+  background: black
+  background: #3b444b
+  color: white
+  padding: 15px 5px
+  text-transform: uppercase
+  display: block
+  text-align: center
+  letter-spacing: 0.5px
+  box-sizing: border-box
+  text-decoration: none
+  font-size: 14px
+  // line-height: 1.2rem
+  cursor: pointer
+  &--white
+    background: map-get($colors, white)
+    color: map-get($colors, black)
+    border: 1px solid map-get($colors, black)
+    padding-top: 8px
+    padding-bottom: 6px
+
+  &--payment
+    $size: 35px
+    padding-left: 90px
     position: relative
-    width: 100%
-    border: none
-    border-radius: 3px
-    background: black
-    background: #3b444b
-    color: white
-    padding: 15px 5px
-    text-transform: uppercase
-    display: block
-    text-align: center
-    letter-spacing: 0.5px
-    box-sizing: border-box
-    text-decoration: none
-    font-size: 14px
-    line-height: 1.2rem
-    &--thin
-        padding-top: 7px
-        padding-bottom: 7px
+    text-transform: lowercase
+    text-align: left
+    
+    & span
+      display: inline-block
+      border-bottom: 1px dotted map-get($colors, black)
+      cursor: pointer
+      font-size: 12px
+
+    &:before
+      content: ''
+      position: absolute
+      display: block
+      left: 40px
+      width: $size
+      height: $size
+      background: url('/img/icons/credit-card.svg')
+      

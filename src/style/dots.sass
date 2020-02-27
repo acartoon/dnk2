@@ -1,0 +1,33 @@
+@import ../template/variables
+
+.slick-dotted.slick-slider
+  margin-bottom: 0 !important
+
+.dots
+  display: flex
+  list-style: none
+  padding: 0
+  margin: 0
+  margin-top: 20px
+  justify-content: center
+  // position: absolute
+  // left: 50%
+  // top: 100%
+  // transform: translateX(-50%)
+
+  li
+    margin-left: 5px
+    margin-right: 5px
+    &.slick-active button
+      background: map-get($colors, black)
+
+  button
+    $size: 12px
+    background: map-get($colors, lightgrey)
+    // opacity: .6
+    border-radius: 50%
+    box-sizing: border-box
+    border: none
+    width: $size
+    height: $size
+    font-size: 0

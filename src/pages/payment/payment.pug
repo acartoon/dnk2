@@ -1,31 +1,52 @@
 extends ../../template/template.pug
 
+include ../../components/info.block/info-block.pug
+
 block variables
   - var titlePage = 'Оформление заказа'
   - var pageNameClass = 'payment'
 
 block content
   .container
-    h1 Оформление заказа
-    .row
-      .col-12.col-md-6
-        section.payment-page__user-data
-            //- include ../../components/info.block/info-block.pug
+    h1.main-title.payment-page__main-title Оформление заказа
+  section.payment-page__user-data
+    .container
+      h3.title.payment-page__subtitle Данные получателя
+      .payment-page__info
+        +infoBlock
+          p Вводите Ваши настоящие данные. Это поможет избежать проблем при получении Вашего заказа.
+          p Указывайте существующую почту, к которой у Вас есть доступ. 
+            | Вся информация по изменению статуса Вашего заказа будет приходить именно на эту почту
+      include ../../components/user.data/user-data.pug
 
-        section.payment-page__user-data
-          h3 данные получателя
-          include ../../components/user.data/user-data.pug
+  section.payment-page__shipping
+    .container
+      h3.title.payment-page__subtitle Служба доставки
+      .payment-page__info
+        +infoBlock
+          p Стоимость доставки рассчитывается исходя из веса Вашего заказа и адреса доставки.
+      include ../../components/shipping/shipping.pug
 
-        section.payment-page__shipping
-          h3 служба доставки
-          include ../../components/shipping/shipping.pug
-      .col-12.col-md-6
-        section.payment-page__price-total
-          include ../../components/price.payment/price-payment.pug
-
-        .payment-page__bottom.row
-          section.payment-page__payment.col-md-6
-            include ../../components/payment/payment.pug
-
-          section.payment-page__pay-btn.col-md-6
-            a.button Оформить заказ
+  section.payment-page__price-total
+    .container
+      .row
+        .col-12
+          .payment-page__price-payment
+            include ../../components/price.payment/price-payment.pug
+        .col-12.order-md-n1
+          .payment-page__info
+            +infoBlock
+              p Неоплаченный заказ отменяется в течении 15 минут после его оформления.
+              p При использовании купона обращайте внимание на изменение статуса Вашего заказа. 
+                | Если после успешной оплаты статус заказа не изменился обратитесь в службу технической поддрежки по телефону 
+                a(href="tel:89188513833").text-link 8-918-851-38-33
+        .col-12
+          .payment-page__bottom
+            .payment-page__btn.order-md-2
+              a.button Оплатить
+            .payment-page__btn
+              button.button.button--white.button--payment Банковской картой
+                span Изменить способ оплаты
+            //- .col-12.col-md-6
+            //-   section.payment-page__payment
+            //-     include ../../components/payment/payment.pug

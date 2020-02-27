@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,OAAO,EAAE,IAAI;CAAG;;AAElB,AAAA,eAAe,CAAC;EACd,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,GAAG;CAAG;;AAEf,AAAA,gBAAgB,CAAC;EACf,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,GAAG;CAAG;;AAEf,AAAA,eAAe,CAAC;EACd,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,GAAG;CAAG",
-    "sources": [
-        "delivery.sass"
-    ],
-    "names": [],
-    "file": "delivery.css"
-}

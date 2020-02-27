@@ -1,0 +1,109 @@
+extends ../../template/template.pug
+include ../../components/help.pop/template.pug
+
+block variables
+  - var titlePage = 'Корзина'
+  - var pageNameClass = 'order'
+block content
+  -
+    var statuses = [
+      {title: 'Принят, ожидается оплата',
+      desc: 'Ваш заказ оформлен, но оплата еще не поступила. Такой заказ будет отменен через 15 минут после оформления', anchor: 'created'},
+      {title: 'В обработке (оплачен)',
+      desc: 'Ваш заказ оформлен и оплачен, в течении 3-х дней будет передан в службу доставки или в транспортную компанию', anchor: 'paid'},
+      {title: 'В обработке (админ)',
+      desc: 'Ваш заказ оформлен, но оплата еще не поступила. Такой заказ будет отменен через 15 минут после оформления', anchor: 'paidAdmin'},
+      {title: 'Комплектация заказа H2O',
+      desc: 'Ваш заказ находится на сборке', anchor: 'processing'},
+      {title: 'Готов к самовывозу H2O',
+      desc: 'Вам заказ находится в магазине и готов к самовывозу', anchor: 'done'},
+      {title: 'Завершен',
+      desc: 'Ваш заказ уже получен или передан в службу доставки более 3-х дней назад', anchor: 'closed'},
+      {title: 'Отклонен',
+      desc: 'Ваш заказ был автоматически отменен в связи с отсутствием оплаты по Вашему заказу', anchor: 'rejected'},
+      {title: 'Отменен',
+      desc: 'Ваш заказ был отменен администатором. В случае ошибки обратитесь в службу технической поддержки', anchor: 'cancelled'},
+      {title: 'Возврат',
+      desc: 'По Вашему заказу был осуществлен возврат', anchor: 'returned'}
+    ]
+  -
+    var orderShipping = {'Служба доставки': 'Почта России', 'Адрес доставки': '344000 Ростов-на-Дону, Максима Горького, 151',
+      'дата отгрузки': '15.03.2020', 'трек номер': '34457954654564'}
+
+  - var user = {'Получатель': 'Андрей Петров', 'E-mail': '310304@list.ru', 'Телефон': '+79188513833'};
+  - var orderData = {'Оплата': 'оплачен', 'Сумма заказа': '3 500 р', 'Способ оплаты': 'банковская карта'};
+
+  .container
+    .row
+      .col-md-3
+      .col-12.col-md-9
+        small.order__status статус: 
+        a(href='#paid').text-link в обработке
+        h3.subtitle.order__subtitle заказ #30017 от 15.06.2019
+        .order__content
+          section.order__section.row
+            .col-6
+              dl.order__dl.order__block.order__block--r-border
+                each val, index in user
+                  dd.order__dt=`${index}: `
+                  dt.order__dd=val
+            .col-6
+              dl.order__dl.order__block.col-6
+                each val, index in orderData
+                  dd.order__dt=`${index}: `
+                  dt.order__dd=val
+
+            .col-12
+              dl.order__dl.order__dl--last.order__dl--full
+                each val, index in orderShipping
+                  dd.order__dt=`${index}: `
+                  dt.order__dd=val
+                    if(index == 'трек номер')
+                      a.text-link(action='help', href="#") отследить
+                      .order__help-pop
+                        +helpPop
+                          p.para Для своевременного отслеживания Вашего заказа Вы можете скачать приложение Вашей службы доставки
+                            a(href="#apps").text-link подробнее
+              .order__info.d-md-none
+                p.para *Для своевременного отслеживания Вашего заказа Вы можете скачать приложение Вашей службы доставки 
+                  a(href="#apps").text-link подробнее
+                  | ...
+
+
+          section.order__section
+            .order__block.mt-5
+              h3.subtitle.order__subtitle Состав заказа
+              .order-slider.slick
+                - for(var i = 0; i < 6; i++)
+                  div
+                    .row
+                      .col-4
+                        img(src="/img/products/14.jpg")
+                      .col-8
+                        h5.tagline.font-bold Лосины Cвет с перфорацией Junior
+                        p.para wos
+                        p.para 1 штука
+                        p.para 3 400 р
+                
+          section.order__section
+            .order__block
+              h3.subtitle.order__subtitle Памятка по статусам заказов
+              ul.order__list
+                each val in statuses
+                  li.order__item
+                    h5(id=val.anchor).tagline.order__tagline=val.title
+                    p.para=val.desc
+                
+          section(id='apps').order__section
+              h3.subtitle.order__subtitle Отслеживание
+              p.para Для быстрого и своевременного ослеживания Вашего заказа Вы можете скачать
+                | приложение той службы доставки, через которую Вы выбрали для доставки заказа 
+                a(href='#').text-link почта России
+                | , 
+                a(href='#').text-link сдэк
+                |  или 
+                a(href='#').text-link боксберри
+  section.order__section-help
+    .container
+      h3.subtitle.order__subtitle Остались вопросы?
+      include ../../components/user.help/user-help.pug

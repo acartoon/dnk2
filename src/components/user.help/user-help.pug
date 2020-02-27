@@ -1,0 +1,23 @@
+- var tel = '+79188513833'
+- var mail = 'klietn@dnk-russia.com'
+
+-
+    var help = [
+      {title: 'Доставка', text: 'Доставим Ваш закаказ в любую точку мира. Сроки доставки от одного дня в зависимости от выбранной Вами службы доставки', link: '#'},
+      {title: 'Возврат', text: 'Не подошел размер, цвет или фасон? Вернем Ваш заказ в течении 7 дней с момента получения', link: '#'},
+      {title: 'Помощь', text: 'Нужна консультация специалиста? Связитесь с нами любым удобным для Вас способом ', link: '#', tel: true},
+  ]
+
+.user-help
+  .row
+    each val in help
+      .user-help__item.col-12.col-md-4
+        h3.user-help__subtitle.subtitle=val.title
+        p.para.user-help__para=val.text
+          if(val.tel == true)
+            | по телефону 
+            a.text-link(href=`tel:${tel}`)=tel
+            |  или почте 
+            a.text-link(href=`mailto:${mail}`)=mail
+
+        a(href=val.link).user-help__text-link.text-link=val.title

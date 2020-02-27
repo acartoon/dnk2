@@ -15,18 +15,33 @@
 // @each $val in $sections
 //   @include border($val)
 
-.product__catalog-catalog-inner
+.product__recommend-inner
   // line-height: 1
   // border-top: 1px solid map-get($colors, grey)
   border-bottom: 1px solid map-get($colors, grey)
+  padding: map-get($indent, sm) 0
   
   @include media(768px)
     border: none
+    padding: map-get($indent, l) 0
 
-.product__catalog-catalog
+.product__recommend
   @include media(768px)
     // border-top: 1px solid map-get($colors, grey)
     border-bottom: 1px solid map-get($colors, grey)
 
 .product__product
-  border-bottom: 1px solid map-get($colors, grey)
+  @include media(768px)
+    border-bottom: 1px solid map-get($colors, grey)
+
+.product__subtitle
+  @media(min-width: 768px)
+    margin-bottom: map-get($indent, m) !important
+    text-align: center
+
+.product__catalog
+  @media(min-width: 768px)
+    max-height: 100% !important
+
+.product__catalog-wpapper
+  padding-top: map-get($indent, s) !important

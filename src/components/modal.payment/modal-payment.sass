@@ -1,0 +1,41 @@
+@import ../../template/variables
+
+.modal-payment__list
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+
+
+.modal-payment__label
+  position: relative
+  display: block
+  padding-left: 30px
+  cursor: pointer
+  display: flex
+
+  &::before
+    content: ''
+    $size: 18px
+    position: absolute
+    left: 0
+    display: block
+    width: $size
+    height: $size
+    border-radius: 50%
+    box-sizing: border-box
+    border: 1px solid map-get($colors, grey)
+
+    .modal-payment__chexbox:checked ~ &
+      box-shadow: inset 0px 0px 0px 4px map-get($colors, white)
+      background: map-get($colors, black)
+
+.modal-payment__chexbox
+  display: none
+
+.modal-payment__item
+  margin-bottom: 15px
+  margin-bottom: 15px
+  padding: 10px
+  border-radius: 3px
+  border: 1px solid map-get($colors, lightgrey)

@@ -1,18 +1,30 @@
-.price-basket
+@import ../../template/variables
+
+.price-payment
   margin: 0
   padding: 0
   list-style: none
+  border-top: 1px solid map-get($colors, lightgrey)
+  border-bottom: 1px solid map-get($colors, lightgrey)
+  padding-top: 10px
+  padding-bottom: 10px
 
-.price-basket__item
+.price-payment__item
   display: flex
   justify-content: space-between
   font-weight: 400
 
-.price-basket__title
+.price-payment__title
   text-transform: uppercase
   margin-right: 20px
+  flex-grow: 2
+  text-align: right
 
 .basket-page__button
   @media(min-width: 768px)
     max-width: 200px
     margin-left: auto
+
+.price-payment__cost
+    width: 150px
+    text-align: right

@@ -1,0 +1,30 @@
+@import ../../template/variables
+
+.user-help__text-link
+  text-align: center
+  @media(min-width: 768px)
+    align-self: flex-end
+
+.user-help__item
+  text-align: center
+  padding-bottom: map-get($indent, s)
+  border-bottom: 1px solid map-get($colors, lightgrey)
+  margin-bottom: map-get($indent, m)
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: stretch
+
+  @media(min-width: 768px)
+    border-bottom: 0
+    border-right: 1px solid map-get($colors, lightgrey)
+
+  &:last-child
+    border-bottom: none
+    border-right: none
+
+.user-help__subtitle
+  margin-bottom: map-get($indent, xs) !important
+
+.user-help__para
+  margin-bottom: map-get($indent, s) !important

@@ -13,8 +13,13 @@ $size: 40px
     padding-right: $size
     &:before
     
-.gift__button
+.gift__body
   margin-bottom: map-get($indent, s)
+
+  @media(min-width: 768px)
+    margin-bottom: 0
+    order: 2
+    align-self: flex-end
 
 // .gift__input
 //   display: none
@@ -24,6 +29,7 @@ $size: 40px
 
 .gift__used-block
   position: relative
+  margin-bottom: map-get($indent, s)
 
 .gift__used-remove  
   position: absolute

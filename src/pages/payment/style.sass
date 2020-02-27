@@ -1,4 +1,32 @@
 @import ../../template/variables
 
+
+.payment-page__main-title
+  margin-bottom: map-get($indent, xs)
+  
 .payment-page__price-total
+  margin-bottom: map-get($indent, sm)
+
+.payment-page__subtitle
+  margin-bottom: map-get($indent, s)
+
+.payment-page__bottom
+  @media(min-width: 768px)
+    display: flex
+    justify-content: flex-end
+    margin-left: - map-get($indent, s)
+    margin-right: - map-get($indent, s)
+
+.payment-page__btn
+  display: flex
+  @media(min-width: 768px)
+    width: 350px
+    padding-left: map-get($indent, s)
+    padding-right: map-get($indent, s)
+      
+
+.payment-page__info
+  margin-bottom: map-get($indent, sm)
+  
+.payment-page__price-payment
   margin-bottom: map-get($indent, sm)

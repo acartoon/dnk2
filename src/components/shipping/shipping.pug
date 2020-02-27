@@ -1,11 +1,9 @@
 include ../delivery/delivery.pug
+include ../modal.payment/modal-payment.pug
 
 .shipping
-  .shipping__selected
-    +delivery('Почта России', '2500', '3')
   .shipping__select
-  .shipping__bottom.row
-    .shipping__change.col-md-6
-      button.button Изменить доставку
-    .shipping__change.col-md-6
+    +modalPayment('Выберете службу доставки')
+  .shipping__bottom
+    .shipping__change
       button.button Выбрат пунт самовывоза

@@ -3,30 +3,34 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin= require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+const entryJs = (pages) => {
+  const result = pages.reduce((res, page) => {
+    res[page.name] = [`./src/pages/${page.adress}.js`];
+    return res;
+  }, {});
+  // result['app'] = ['./src/template/template.js'];
+  return result;
+}
 
 const pages = [
-  {name: 'product', adress: 'product/product', chunks: 'product'},
-  {name: 'index', adress: 'main/index', chunks: ''},
+  {name: 'index', adress: 'main/index', chunks: 'index'},
   {name: 'basket', adress: 'basket/basket', chunks: 'basket'},
+  {name: 'product', adress: 'product/product', chunks: 'product'},
   {name: 'payment', adress: 'payment/payment', chunks: 'payment'},
   {name: 'catalog', adress: 'catalog/catalog', chunks: 'catalog'},
   {name: 'catalog-menu', adress: 'catalog.menu/catalog-menu', chunks: 'catalog_menu'},
+  {name: 'order', adress: 'order/order', chunks: 'order'},
 ];
+// {name: 'app', adress: 'template.js', chunks: 'template'},
 // let isProduction = (process.env.NODE_ENV == "production");
 
 module.exports = {
+  // context: __dirname + `/src/pages/`,
   devtool: 'source-map',
   mode: "development",
-  entry: {
-    // context: path.resolve(__dirname, 'src'),
-    basket: ['./src/pages/basket/basket.js'],
-    product: ['./src/pages/product/product.js'],
-    app: ['./src/template/template.js'],
-    payment: ['./src/pages/payment/payment.js'],
-    catalog: ['./src/pages/catalog/catalog.js'],
-    catalog_menu: ['./src/pages/catalog.menu/catalog-menu.js'],
-
-  },
+  entry: entryJs(pages),
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, './dist'),
@@ -38,20 +42,28 @@ module.exports = {
     open: true,
     port: 8082,
   },
-
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      minSize: 1,
+      minChunks: 4,
+      name: 'common'
+    }
+  },
   module: {
     rules: [
+      {
+        test: /\.(png|jpe?g|gif|woff|svg|eot|ttf)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
-      // { 
-      //   test : /\.pug$/,
-      //   use: { 
-      //     loader: 'pug-loader',
-      //     query: {} 
-      //   }
-      //  },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
@@ -76,15 +88,13 @@ module.exports = {
         ]
       },
       {
-        // test: /\.sass$/,
         test: /\.(scss|sass|css)$/,
-        // test: /\.sass$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [{
               loader: 'css-loader',
               options: {
-                sourceMap: true
+                // sourceMap: true
               }
             },
             {
@@ -109,7 +119,7 @@ module.exports = {
     ...pages.map(page => new HtmlWebpackPlugin({
         filename: `./${page.name}.html`,
         template: `./src/pages/${page.adress}.pug`,
-        chunks: [page.chunks, 'app'],
+        chunks: [page.chunks],
         css: [page.chunks],
     })),
     new MiniCssExtractPlugin({
@@ -117,12 +127,20 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
     new ExtractTextPlugin(
-      {filename: 'style/style.[name].css'}
+      {filename: 'style/[name].css'}
     ),
+    // new OptimizeCssAssetsPlugin({
+    //   assetNameRegExp: /\.optimize\.css$/g,
+    //   // cssProcessor: require('cssnano'),
+    //   cssProcessorPluginOptions: {
+    //     preset: ['default', { discardComments: { removeAll: true } }],
+    //   },
+    //   canPrint: true
+    // }),
 
     new CopyWebpackPlugin([{
       from: './src/img',
       to: './img'
-    }]),
+    }])
   ]
 }

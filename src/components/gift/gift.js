@@ -1,7 +1,9 @@
 import '../input/input'
 import './gift.sass'
+import '../info.block/info-block'
 
 const giftButton = document.querySelector(`.gift__button`);
+const giftInput = document.querySelector(`.gift__input`);
 // const giftInput = document.querySelectorф(`.gift__used-remove`);
 const giftContainer = document.querySelector(`.gift`);
 
@@ -20,5 +22,5 @@ const giftContainer = document.querySelector(`.gift`);
 const template = require("./gift-used.pug");
 
 giftButton.addEventListener(`click`, () => {
-  giftContainer.insertAdjacentHTML(`beforeend`, template)
+  giftInput.insertAdjacentHTML(`afterEnd`, template)
 });

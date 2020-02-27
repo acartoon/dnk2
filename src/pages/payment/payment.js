@@ -1,4 +1,8 @@
+import '../../template/template'
 import '../../components/user.data/user-data'
 import '../../components/shipping/script'
 import '../../components/price.payment/price-payment'
 import './style.sass'
+import '../../components/payment/payment'
+import '../../components/info.block/info-block'
+import '../../components/modal.payment/modal-payment'

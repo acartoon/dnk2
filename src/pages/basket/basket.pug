@@ -17,21 +17,24 @@ block content
 
   section.basket-page__bottom
     .container
-      .row
-        .col-12.col-md-6
-          .basket-page__gift
-            include ../../components/gift/gift.pug
-
-        .col-12.col-md-6
-          .basket-page__price-basket
-            include ../../components/price.basket/price-basket.pug
-
+      .row.mb-md
+        .basket-page__gift.col-12.col-md-4
+          include ../../components/gift/gift.pug
+        .col-12.col-md-8.order-md-n1
+          .info-block.info-block--white
+            p Купоны не действуют, если стоимость купона меньше стоимости Вашего заказа. Купон не распространяется на 
+              | доставку, если не указано обратное. Если Вы не можете применить купон обратитесь в службу технической поддержки подарочный
+              | телефону 
+              a(href='tel:8-918-851-38-33').text-link 8-918-851-38-33
+              |  или по электронной почте 
+              a(href='mailto:a.secret@dnk-russia.com').text-link a.secret@dnk-russia.com
+      .basket-page__price-basket
+        include ../../components/price.basket/price-basket.pug
 
   //- section.basket-page__user-data
   //-   .container
   //-     include ../components/info.block/info-block.pug
 
-
   section.basket-page__paymetn-btn
     .container
-      a.basket-page__button.button Далее
+      a.basket-page__button.button Купить

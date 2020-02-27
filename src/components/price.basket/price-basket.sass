@@ -1,16 +1,28 @@
+@import ../../template/variables
+
 .price-basket
   margin: 0
   padding: 0
+  padding: 10px 15px
   list-style: none
+  border-top: 1px solid map-get($colors, lightgrey)
+  border-bottom: 1px solid map-get($colors, lightgrey)
+
+.price-basket__cost
+  width: 100px
+  text-align: right
 
 .price-basket__item
   display: flex
   justify-content: space-between
   font-weight: 400
+  flex-grow: 3
 
 .price-basket__title
   text-transform: uppercase
   margin-right: 20px
+  text-align: right
+  flex-grow: 5
 
 .basket-page__button
   @media(min-width: 768px)

@@ -1,0 +1,10 @@
+include ../delivery/delivery.pug
+
+mixin modalPayment(title)
+  ul.modal-payment__list.row
+    - for (var x = 0; x < 5; x++)
+      li.col-12.col-md-4.col-lg-3
+        .modal-payment__item
+          input(id=x, type='radio', name='shipping').chexbox.modal-payment__chexbox
+          label(for=x).modal-payment__label
+            +delivery('Почта России', '2500', '3')

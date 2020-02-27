@@ -3,73 +3,54 @@ include ../accordion-mob/accordion-mob.pug
 
 .product.row
   .col-12.col-md-5
-    .row.product__img-block
-      .col-md-3
-        .slick.slick-main.d-none.d-md-block
-          .product__img-block
-            img(src="/img/products/36.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/39.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/102.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/39.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/102.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/102.jpg").product__img-link
-      .col-12.col-md-9
-        .slick.slick-for
-          .product__img-block
-            img(src="/img/products/36.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/39.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/102.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/39.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/102.jpg").product__img-link
-          .product__img-block
-            img(src="/img/products/102.jpg").product__img-link
+    include ./slider.pug
   .product__info.col-12.col-md-6
     .product__header
       h3.product__name Костюм DNK&СМЕШАРИКИ черный
       p.product__collection смешарики
       p.product__price 2 500 ₽
 
-    p.product__table-size
-      span Таблица размеров
+    .product__body
+      p.product__link
+        span Таблица размеров
 
-    .product__offers
-      include ../offers.product/offers-product.pug
+      .product__offers
+        include ../offers.product/offers-product.pug
 
-    .product__data
-      i.product__emphasis В наличии 
-        span много
-      i.product__emphasis доставка 
-        span от 3-х дней
+      .product__data.d-none.d-md-block
+        i.product__emphasis В наличии 
+          span много
+        i.product__emphasis доставка 
+          span от 3-х дней
+      a(href='#family').product__link
+        span посмотреть family look
 
-    .product__quantity
-      p.product__quantity-title количество
-      include ../count/count.pug
+      .product__quantity
+        p.product__quantity-title количество
+        include ../count/count.pug
 
-    .product__button-buy
-      button.button В корзину
+      .product__button-buy
+        button.button В корзину
 
   .col-12
-    ul.product__property.row
+    ul.product__details.row
       li.col-12.col-md-6
-        .product__property-item
-          +accordion-mob('Общие параметры')
-            include ../product.property/product-property.pug
+        .product__property
+          h3.subtitle.accordion__title Общие параметры
+          .accordion__body.product__block
+            .accordion__wrapper
+              include ../product.property/product-property.pug
 
       li.col-12.col-md-6
-        .product__property-item
-          +accordion-mob('Параметры размера')
-            include ../product.property/product-property.pug
+        .product__property
+          h3.accordion__title.subtitle Параметры размера
+          .accordion__body.product__block
+            .accordion__wrapper
+              include ../product.property/product-property.pug
 
       li.col-12
-        .product__property-item.product__property-item--last
-          +accordion-mob('Описание')
-            p.product__description-text=description
+        div(property="description").product__property.product__property--last
+          h3.accordion__title.subtitle.d-md-none Описание
+          .accordion__body.product__block
+            .accordion__wrapper
+              p.product__description=description
