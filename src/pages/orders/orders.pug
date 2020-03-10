@@ -1,0 +1,34 @@
+extends ../../template/template.pug
+include ../../components/help.pop/template.pug
+include ../../components/filter.fast/template.pug
+
+block variables
+  - var titlePage = 'История заказов'
+  - var pageNameClass = 'orders'
+block content
+
+  - var product = ['40078 от 15.06.19', '40050 от 13.06.19', '40024 от 28.04.18', '40012 от 05.02.20'];
+  - var filter = ['все', 'завершенные', 'отмененные', 'активные', 'за этот год'];
+
+  .container.mb-s
+    .row
+      .col-md-3
+      .col-12.col-md-9
+        h1.main-title.orders__main-title=titlePage
+        .orders__filter
+          +filterFast(filter)
+        ul.orders__list
+          each val in product
+            li.orders__item
+              a(href="order.html").order__link
+                h3.subtitle.orders__subtitle=`Заказ ${val}`
+                ul.orders__order-list.row
+                  - for (var x = 106; x < 115; x++)
+                    li.col-3.col-md-2.orders__order-item
+                      .order-list__img-block
+                        img(src=`/img/products/${x}.jpg`)
+        .orders__pagination
+          include ../../components/pagination/template.pug
+  .orders__user-help
+    .container
+      include ../../components/user.help/user-help.pug

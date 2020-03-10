@@ -42,13 +42,13 @@ block content
         h3.subtitle.order__subtitle заказ #30017 от 15.06.2019
         .order__content
           section.order__section.row
-            .col-6
-              dl.order__dl.order__block.order__block--r-border
+            .col-6.border-r.border-md-none
+              dl.order__dl.order__block
                 each val, index in user
                   dd.order__dt=`${index}: `
                   dt.order__dd=val
             .col-6
-              dl.order__dl.order__block.col-6
+              dl.order__dl.order__block
                 each val, index in orderData
                   dd.order__dt=`${index}: `
                   dt.order__dd=val
@@ -73,18 +73,7 @@ block content
           section.order__section
             .order__block.mt-5
               h3.subtitle.order__subtitle Состав заказа
-              .order-slider.slick
-                - for(var i = 0; i < 6; i++)
-                  div
-                    .row
-                      .col-4
-                        img(src="/img/products/14.jpg")
-                      .col-8
-                        h5.tagline.font-bold Лосины Cвет с перфорацией Junior
-                        p.para wos
-                        p.para 1 штука
-                        p.para 3 400 р
-                
+              include ../../components/product.order/template.pug
           section.order__section
             .order__block
               h3.subtitle.order__subtitle Памятка по статусам заказов
@@ -105,5 +94,4 @@ block content
                 a(href='#').text-link боксберри
   section.order__section-help
     .container
-      h3.subtitle.order__subtitle Остались вопросы?
       include ../../components/user.help/user-help.pug

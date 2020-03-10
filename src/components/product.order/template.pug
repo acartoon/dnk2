@@ -1,0 +1,19 @@
+-
+  var products = [
+    {name: 'Длинное название очень очень очень длинное название, сума сойти какое длинное название', size: 'wos', count: '1', price: '3 400'},
+    {name: 'Лосины Cвет с перфорацией Junior', size: 'wos', count: '1', price: '3 400'},
+    {name: 'Куртка MADE IN РФ красная Woman', size: 'wos', count: '1', price: '3 400'},
+    {name: 'Комбинезон "Worker" мокко', size: 'wos', count: '1', price: '3 400'},
+  ]
+
+.order-slider.slick
+  each val in products
+    div
+      .row
+        .col-4
+          img(src="/img/products/14.jpg", title=val.name)
+        .col-8
+          h5.product-order__name.tagline.font-bold=val.name
+          p.para=val.size
+          p.para=`${val.count} штуки`
+          p.para=`${val.price} p`

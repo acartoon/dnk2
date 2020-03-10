@@ -17,7 +17,6 @@ export class Accordion {
   }
 
   openAccordion(accordion) {
-    console.log(this._activeAccordion)
     const accordionBody = accordion.lastElementChild;
     if(!accordionBody.style.maxHeight) {
       if(this._activeAccordion) {

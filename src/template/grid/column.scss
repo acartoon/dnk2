@@ -56,6 +56,12 @@ $sizes: (
   }
 }
 
+@mixin make-border-none($breakpoint) {
+  .border#{$breakpoint}-none {
+    border: none;
+  }
+}
+
 @mixin make-order($breakpoint, $number) {
   $value: if($number < 0, n#{$number * -1}, $number);
   .order#{$breakpoint}-#{$value} {
@@ -80,6 +86,7 @@ $sizes: (
   @include make-container-column($breakpoint, $value) {
     @include make-display-none($breakpoint);
     @include make-display($breakpoint);
+    @include make-border-none($breakpoint);
     @for $i from -1 through 4 {
       @include make-order($breakpoint, $i)
     }
@@ -93,12 +100,14 @@ $sizes: (
   }
 }
 
-
-
-
-
 @mixin make-display-none($breakpoint) {
   .d#{$breakpoint}-none {
     display: none;
+  }
+}
+
+@each $key, $value in $sizes {
+  .border-#{$key} {
+    border-#{$value}: 1px solid map-get($colors, lightgrey)
   }
 }

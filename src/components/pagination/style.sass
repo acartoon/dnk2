@@ -1,0 +1,31 @@
+@import ../../template/variables
+
+$margin: map-get($indent, s)
+  
+.pagination
+  margin: 0
+  padding: 0
+  list-style: none
+  margin-left: - $margin
+  margin-right: - $margin
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+
+.pagination__item
+  // padding-left: $margin
+  // padding-right: $margin
+
+.pagination__label
+  margin: 0
+  padding: $margin
+  cursor: pointer
+  color: map-get($colors, grey)
+  transition: transform .1s
+
+  &:hover
+    color: map-get($colors, black)
+    transform: scale(1.05)
+    transition: transform .1s
+  // border: 1px solid map-get($colors, lightgrey)
+  // border-radius: 5px

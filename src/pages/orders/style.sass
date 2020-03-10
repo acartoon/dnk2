@@ -1,0 +1,83 @@
+@import ../../template/variables
+
+.order-list__img-block
+  // margin-left: -5px
+  // margin-right: -5px
+
+.orders__main-title
+  margin-bottom: map-get($indent, sm)
+
+.orders__list
+  margin: 0
+  padding: 0
+  list-style: none
+  margin-bottom: map-get($indent, sm)
+
+.orders-list__item
+  margin-bottom: map-get($indent, sm)
+
+.order-list__img-block
+  line-height: 0
+
+.orders__order-list
+  list-style: none
+  // margin: 0
+  padding: 0
+
+.orders__subtitle
+  margin-bottom: map-get($indent, s)
+
+.orders__item
+  margin-bottom: map-get($indent, sm)
+  border-bottom: 1px solid map-get($colors, lightgrey)
+  padding-bottom: map-get($indent, m)
+
+  &:last-child
+    border-bottom: none
+    padding-bottom: 0
+    margin-bottom: 0
+
+.orders__count
+  color: map-get($colors, grey)
+  position: relative
+  padding-right: 20px
+  display: inline-block
+  @media(min-width: 768px)
+    padding-right: 30px 
+
+
+  &:before
+    $size: 15px
+    background: url(/img/icons/arrow-next.svg)
+    background-repeat: no-repeat
+    background-size: contain
+    position: absolute
+    content: ''
+    width: $size
+    height: $size
+    right: 0
+    top: 50%
+    transform: rotateY(-50deg) translateY(-50%)
+    // transform: translateY(-50%)
+
+
+.orders__user-help
+  padding-top: map-get($indent, sm)
+  border-top: 1px solid map-get($colors, lightgrey)
+
+.orders__order-item
+
+  &--hidden
+    display: none
+
+.order__link
+  color: inherit
+  display: block
+  text-decoration: none
+
+.orders__filter
+  margin-bottom: map-get($indent, md)
+
+.orders__pagination
+  // padding-top: map-get($indent, s)
+  // margin-bottom: map-get($indent, md)

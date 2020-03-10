@@ -22,6 +22,7 @@ const pages = [
   {name: 'catalog', adress: 'catalog/catalog', chunks: 'catalog'},
   {name: 'catalog-menu', adress: 'catalog.menu/catalog-menu', chunks: 'catalog_menu'},
   {name: 'order', adress: 'order/order', chunks: 'order'},
+  {name: 'orders', adress: 'orders/orders', chunks: 'orders'},
 ];
 // {name: 'app', adress: 'template.js', chunks: 'template'},
 // let isProduction = (process.env.NODE_ENV == "production");
@@ -94,7 +95,7 @@ module.exports = {
           use: [{
               loader: 'css-loader',
               options: {
-                // sourceMap: true
+                sourceMap: true
               }
             },
             {

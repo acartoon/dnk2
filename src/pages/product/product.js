@@ -10,6 +10,7 @@ import '../../components/product.look/product-look.js'
 import { Accordion } from '../../js/accordion';
 import '../../components/user.help/script'
 import '../../style/dots.sass'
+import { smoothScroll } from '../../js/utils';
 
 const product = document.querySelectorAll(`.accordion`);
 
@@ -18,13 +19,11 @@ accordion.init();
 
 
 const familyLink = document.querySelector(`[href="#family"]`);
+
 familyLink.addEventListener(`click`, (e) => {
   e.preventDefault();
   const familyBlock = document.querySelector(`[id="family"]`)
   const accordionElem = familyBlock.querySelector(`.accordion`);
   accordion.openAccordion(accordionElem);
-  familyBlock.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-  })
+  smoothScroll(familyBlock);
 });

@@ -57,12 +57,12 @@ const mousedown = (evt, handle, state) => {
     if(state === STATE.min) {
       progressBar.style.left= `${coordX}px`;
       minValue = coordX;
-      inputMinValue.value = getPrice(0, 5000, result);
+      inputMinValue.value = getPrice(1000, 5000, result);
     }
     else if (state === STATE.max) {
       progressBar.style.right= `${scaleWidth - coordX}px`;
       maxValue = coordX;
-      inputMaxValue.value = getPrice(0, 5000, result);
+      inputMaxValue.value = getPrice(1000, 5000, result);
     }
   }
   
