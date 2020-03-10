@@ -1,5 +1,5 @@
 mixin product-viewed(className, src)
-  div(class=className)
+  a(class=className href='product.html')
     div(class=`${className}__img-block`)
       img(class=`${className}__img-first` src=src, alt="")
       img(class=`${className}__img-second` src="/img/123.jpg", alt="")

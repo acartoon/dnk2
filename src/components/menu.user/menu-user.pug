@@ -9,4 +9,4 @@
 ul.menu-user
   each val in menuUser
     li.menu-user__item
-      a(href=val.type, class=`menu-user__link menu-user__link--${val.type}`)=val.title
+      a(href=`${val.type}.html`, class=`menu-user__link menu-user__link--${val.type}`)=val.title
