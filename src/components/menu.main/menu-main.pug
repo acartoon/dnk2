@@ -15,4 +15,4 @@ ul.menu-main
   each val in menuMain
     li.menu-main__item
       - var className = val.new == true ? 'menu-main__link--new' : ''
-      a(href=val.link, class=className).menu-main__link=val.title
+      a(href=`catalog.html`, class=className).menu-main__link=val.title
